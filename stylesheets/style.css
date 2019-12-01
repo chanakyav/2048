@@ -110,4 +110,8 @@ em {
     border-radius: 3px;
     padding: 20px;
     font-size: 150%;
+    text-align: center;
+    line-height: 75px;
+    font-size: 45px;
+    font-weight: bolder;
 }
