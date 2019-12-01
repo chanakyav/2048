@@ -1,1 +1,95 @@
-@import url("reset.css")
+@import url("reset.css");
+
+html {
+    height: 100%;
+    background-color: #FAF8EF;    
+}
+
+#root {
+    width: 50vh;
+    height: 100%;
+    margin: auto;
+}
+
+.title {
+    color: #776D65;
+    font-size: 80px;
+    font-weight: bold;
+    display: block;
+    float: left;
+}
+
+.score, .best-score {
+    min-width: 50px;
+    background-color: #BBADA0;
+    margin: 10px;
+    padding: 10px 30px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.score-title, .best-title {
+    color: rgb(218, 211, 205);
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.score-value, .best-value {
+    color: white;
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.scores {
+    display: flex;
+    float: right;
+    position: relative;
+}
+
+
+.header {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    height: 20vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.bottom-header {
+    display: flex;
+    justify-content: space-between;
+    margin: 40px 0;
+}
+
+.bottom-header p {
+    color: #776D65;
+    font-size: 18px;
+    line-height: 80px;
+    margin-right: 30px
+}
+
+em {
+    font-weight: bolder;
+}
+
+.bottom-header a {
+    background-color: #8F7A66;
+    color:#FAF8EF;
+    height: 40px;
+    margin: auto;
+    padding: 0 10px;
+    line-height: 40px;
+    width: 120px;
+    text-align: center;
+    border-radius: 5px;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.bottom-header a:hover {
+    cursor: pointer;
+}
+
+.game {
+
+}

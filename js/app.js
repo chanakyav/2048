@@ -1,9 +1,18 @@
-function heading() {
-    let heading = document.createElement('p')
-    heading.innerText = "2048"
-    document.body.append(heading)
+function header() {
+    score(0);
+    bestScore(0);
 }
 
+function score(val) {
+    document.querySelector(".score-value").innerText = val.toString()
+}
+
+function bestScore(val) {
+    document.querySelector(".best-value").innerText = val.toString()
+}
+
+
+
 document.addEventListener("DOMContentLoaded", () => {
-    heading();
+    header();
 });
