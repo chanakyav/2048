@@ -48,8 +48,8 @@ html {
 
 
 .header {
-    margin-top: 50px;
-    margin-bottom: 50px;
+    margin-top: 80px;
+    /* margin-bottom: 50px; */
     height: 20vh;
     display: flex;
     flex-direction: column;
@@ -58,7 +58,7 @@ html {
 .bottom-header {
     display: flex;
     justify-content: space-between;
-    margin: 40px 0;
+    /* margin: 40px 0; */
 }
 
 .bottom-header p {
@@ -91,5 +91,23 @@ em {
 }
 
 .game {
+    height: 50vh;
+    background-color: #BBADA0;
+    border-radius: 5px;
+}
 
+.grid {
+    padding: 14px;
+    display: grid;
+    grid-gap: 14px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 114.75px;
+}
+
+.box {
+    background-color: #CDC0B4;
+    color: #fff;
+    border-radius: 3px;
+    padding: 20px;
+    font-size: 150%;
 }
