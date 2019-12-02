@@ -150,6 +150,10 @@ function stackRight() {
     }
 }
 
+function moveUp() {
+    
+}
+
 function arrayMatch(arr1, arr2) {
     if (arr1.length !== arr2.length) return false;
     for (var i = 0; i < arr1.length; i++) {
