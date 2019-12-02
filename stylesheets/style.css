@@ -115,3 +115,13 @@ em {
     font-size: 45px;
     font-weight: bolder;
 }
+
+.directions {
+    margin: 40px 0;
+    line-height: 35px;
+    color: #776D65;
+    font-size: 18px;
+    text-align: justify;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgb(221, 211, 201);
+}

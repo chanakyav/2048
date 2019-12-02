@@ -180,6 +180,22 @@ function moveUp() {
     }
 }
 
+function moveLeft() {
+    for (let i = 0; i < grid.length; i++) {
+        let prevState = grid[i];
+        let items = grid[i].filter((item) => item !== '');
+        let n = 4 - items.length;
+        while (n > 0) {
+            items.push('');
+            n--;
+        }
+        grid[i] = items;
+        if (!arrayMatch(grid[i], prevState)) {
+            moved = true;
+        }
+    }
+}
+
 function arrayMatch(arr1, arr2) {
     if (arr1.length !== arr2.length) return false;
     for (var i = 0; i < arr1.length; i++) {
@@ -217,7 +233,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 document.addEventListener("keydown", event => {
     if (event.keyCode === 37) {
-        console.log('left'); 
+        moveLeft();
+        if (moved) rearrange();
     } else if (event.keyCode === 38) {
         moveUp();
         if (moved) rearrange();
