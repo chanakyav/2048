@@ -150,8 +150,34 @@ function stackRight() {
     }
 }
 
+function getColumn(col) {
+    let column = [];
+    for (let i = 0; i < grid.length; i++) {
+        column.push(grid[i][col])
+    }
+    return column;
+}
+
+function setColumn(array, col) {
+    for (let i = 0; i < grid.length; i++) {
+        grid[i][col] = array[i]
+    }
+}
+
 function moveUp() {
-    
+    for (let i = 0; i < grid.length; i++) {
+        let prevColumn = getColumn(i);
+        let items = prevColumn.filter((item) => item !== '');
+        let n = 4 - items.length;
+        while (n > 0) {
+            items.push('');
+            n--;
+        }
+        setColumn(items, i)
+        if (!arrayMatch(getColumn(i), prevColumn)) {
+            moved = true;
+        }
+    }
 }
 
 function arrayMatch(arr1, arr2) {
@@ -172,6 +198,13 @@ function printGrid() {
     }
 }
 
+function rearrange() {
+    clearTiles();
+    setRandomTile();
+    printGrid();
+    moved = false;
+}
+
 let grid = createGrid();
 let moved = false;
 
@@ -186,17 +219,13 @@ document.addEventListener("keydown", event => {
     if (event.keyCode === 37) {
         console.log('left'); 
     } else if (event.keyCode === 38) {
-        console.log('up');
+        moveUp();
+        if (moved) rearrange();
     } else if (event.keyCode === 39) {
         moveRight();
         stackRight();
         moveRight();
-        if (moved){
-            clearTiles();
-            setRandomTile();
-            printGrid();
-            moved = false;
-        }
+        if (moved) rearrange();
     } else if (event.keyCode === 40) {
         console.log('down');
     }
