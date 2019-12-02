@@ -142,6 +142,7 @@ function stackRight() {
             if (grid[i][j] !== '' && grid[i][j] === grid[i][j-1]) {
                 grid[i][j] *= 2;
                 grid[i][j-1] = '';
+                updateScore(grid[i][j])
                 j -= 2;
             } else {
                 j--;
@@ -196,6 +197,12 @@ function moveLeft() {
     }
 }
 
+function updateScore(val) {
+    currentScore += val;
+    let scoreElement = document.querySelector('.score-value')
+    scoreElement.innerText = currentScore;
+}
+
 function arrayMatch(arr1, arr2) {
     if (arr1.length !== arr2.length) return false;
     for (var i = 0; i < arr1.length; i++) {
@@ -223,6 +230,7 @@ function rearrange() {
 
 let grid = createGrid();
 let moved = false;
+let currentScore = 0;
 
 document.addEventListener("DOMContentLoaded", () => {
     header();
